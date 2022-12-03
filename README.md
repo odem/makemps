@@ -2,7 +2,6 @@
 Collection of essentials
 
 ```
-
 Usage: make TARGET
 
   Targets:
@@ -12,5 +11,4 @@ Usage: make TARGET
      worker        : developer    + text processing
      desktop-min   : worker       + fluxbox
      desktop-tools : desktop-min  + gui tools
-
 ```
