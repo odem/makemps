@@ -5,7 +5,7 @@ default: all
 
 DOCKER_DIR :=/mnt/wsl/shared-docker
 
-all: prepare
+all: prepare install
 
 prepare:
 	sudo apt update
@@ -16,11 +16,10 @@ prepare:
 install:
 	sudo apt install docker-ce docker-ce-cli containerd.io
 	sudo usermod -aG docker $(USER)
-	mkdir -pm o=,ug=rwx "$(DOCKER_DIR)"
-	sudo chgrp docker "$(DOCKER_DIR)"
-	-sudo mkdir /etc/docker
-	-mkdir -pm o=,ug=rwx "$DOCKER_DIR"
-	sudo chgrp docker "$DOCKER_DIR"
+	#mkdir -pm o=,ug=rwx "$(DOCKER_DIR)"
+	#sudo chgrp docker "$(DOCKER_DIR)"
+	#-mkdir -pm o=,ug=rwx "$(DOCKER_DIR)"
+	#sudo chgrp docker "$(DOCKER_DIR)"
 	echo '# Start Docker daemon automatically when logging in if not running.' >> ~/.bashrc
 	echo 'RUNNING=`ps aux | grep dockerd | grep -v grep`' >> ~/.bashrc
 	echo 'if [ -z "$$RUNNING" ]; then' >> ~/.bashrc
