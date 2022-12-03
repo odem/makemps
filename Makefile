@@ -46,6 +46,7 @@ prepare:
 dotfiles:
 	cp dotfiles/.vimrc ~
 	cp dotfiles/.bashrc ~
+	cp dotfiles/.gitconfig ~
 snippets:
 	mkdir -p ~/snippets
 	cp snippets/* ~/snippets/
