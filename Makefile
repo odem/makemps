@@ -1,7 +1,7 @@
 
 # --- Makefile setup ----------------------------------------------------------
 default: help
-.PHONY: default help prepare dotfiles snippets homedir min net dev txt \
+.PHONY: default help prepare dotfiles snippets homedir min key net dev txt \
 	flux gui-tools essentials server developer worker desktop-min desktop-tools
 
 # --- Makefile config ---------------------------------------------------------
@@ -51,7 +51,9 @@ snippets:
 	mkdir -p ~/snippets
 	cp snippets/* ~/snippets/
 	chmod a+x ~/snippets/*
-homedir: dotfiles snippets
+key:
+	-ssh-keygen
+homedir: dotfiles snippets key
 	mkdir -p ~/scratch
 	mkdir -p ~/repo
 	mkdir -p ~/tools
