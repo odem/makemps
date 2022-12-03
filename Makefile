@@ -5,6 +5,7 @@ default: help
 	flux gui-tools essentials server developer worker desktop-min desktop-tools
 
 # --- Makefile config ---------------------------------------------------------
+APT_TRANSPORT       := apt-transport-https ca-certificates curl gnupg2 wget
 APT_ESSENTIALS      := git vim sudo htop cowsay
 APT_ARCHIVES        := zip unzip bzip2 dtrx
 APT_BUILD           := gcc gdb build-essential
@@ -56,7 +57,7 @@ homedir: dotfiles snippets
 
 # --- APT Installers ----------------------------------------------------------
 min: 
-	sudo apt install $(APT_ESSENTIALS) $(APT_ARCHIVES) -y
+	sudo apt install $(APT_TRANSPORT) $(APT_ESSENTIALS) $(APT_ARCHIVES) -y
 net:
 	sudo apt install $(APT_NETWORK) -y
 dev:
