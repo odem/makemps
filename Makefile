@@ -6,7 +6,7 @@ default: help
 
 # --- Makefile config ---------------------------------------------------------
 APT_TRANSPORT       := apt-transport-https ca-certificates curl gnupg2 wget
-APT_ESSENTIALS      := git vim sudo htop cowsay x11-xserver-utils
+APT_ESSENTIALS      := git vim sudo htop cowsay psmisc
 APT_ARCHIVES        := zip unzip bzip2 dtrx
 APT_BUILD           := gcc gdb build-essential
 APT_NETWORK         := net-tools iptables tcpdump whois ssh nmap netcat dnsutils
