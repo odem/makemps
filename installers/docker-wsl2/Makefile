@@ -19,6 +19,7 @@ prepare:
 install:
 	sudo apt install docker-ce docker-ce-cli containerd.io
 	sudo usermod -aG docker $$USER
+	echo "%$$USER     ALL=(ALL) NOPASSWD: /usr/bin/dockerd" | sudo tee -a /etc/sudoers
 	echo '# Start wsl2 docker daemon' >> ~/.bashrc
 	echo 'RUNNING=`ps aux | grep dockerd | grep -v grep`' >> ~/.bashrc
 	echo 'if [ -z "$$RUNNING" ]; then' >> ~/.bashrc
